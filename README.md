@@ -1,0 +1,1 @@
+https://skryvets.com/blog/2019/05/27/solved-issue-spring-cloud-config-server-private-ssh-key/

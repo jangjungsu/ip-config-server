@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: prod
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:dealicious-inc/ip-config-repo.git
+          strict-host-key-checking: false
+          host-key-algorithm: ssh-rsa
+          private-key:
+            -----BEGIN RSA PRIVATE KEY-----
+            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
+            -----END RSA PRIVATE KEY-----

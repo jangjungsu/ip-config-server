@@ -1,0 +1,14 @@
+library identifier: 'dealicious-jenkins-pipeline-library', changelog: false
+ def meta = publishMeta(
+     awsProfile: 'ai',
+     applicationName: 'ip-config-server',
+     environmentName: 'ip-config-prod',
+     applicationPath: 'build/libs',
+     targetFile: 'app.zip'
+ )
+ publishAppPipeline meta: meta, {
+     sh "./gradlew clean build -Dspring.profiles.active=prod"
+     sh "mv ${meta.applicationPath}/ip-config-server-*.jar ${meta.applicationPath}/ip-config-server.jar"
+     sh "zip -r ${meta.targetFile} Procfile ${meta.applicationPath}/ip-config-server.jar .ebextensions"
+     sh "mv ${meta.targetFile} ${meta.destinationFile}"
+ }

@@ -1,0 +1,3 @@
+POST http://localhost:8888/actuator/bus-refresh
+
+#POST http://localhost:5000/actuator/refresh

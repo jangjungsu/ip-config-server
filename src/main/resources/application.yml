@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    include:
+      - profile
+#      - native
+  cloud:
+    bus:
+      trace:
+        enabled: true
+
+  rabbitmq:
+    host: rabbit.ai.sinsang.market
+    port: 5672
+    username: admin
+    password: ubuntu
+
+#logging:
+#  level:
+#    root: debug
+
+server:
+  port: 5000
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include:
+          - bus-refresh
